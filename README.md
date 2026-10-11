@@ -1,12 +1,15 @@
 # App Installer (`app-installer`)
 
+<img width="1920" height="1200" alt="Screenshot_2026-10-11_18-30-10" src="https://github.com/user-attachments/assets/80da1eb8-106a-4b54-a773-1d5afd073082" />
+
+
 A native, rootless graphical package manager and application installer for Linux desktops, built with **Tauri v2** (Rust) and **React 19** (TypeScript, Vite).
 
 `app-installer` provides an enterprise-grade, standard-compliant (FreeDesktop / XDG) solution to inspect, install, configure, audit, and cleanly uninstall portable Linux applications (`.AppImage`, `.tar.gz`, `.tar.xz`, `.tar.bz2`, and standalone ELF binaries).
 
 ---
 
-## 🌟 Key Features & Interface Philosophy
+##  Key Features & Interface Philosophy
 
 ### 1. Dual Mode: True Dark Mode & Light Mode
 - **Instant Toggle:** Switch between full Dark Mode and Light Mode with one click in the header bar or Preferences.
@@ -101,14 +104,14 @@ npx tauri build --bundles appimage
 
 ---
 
-## 📖 Documentation & Guides
+## Documentation & Guides
 - [`HOW_TO_INSTALL.md`](./HOW_TO_INSTALL.md) - Complete installation instructions for Ubuntu/Debian, Fedora, Arch Linux, AppImage, and Windows setup.
 - [`APPLICATION_CONTEXT.md`](./APPLICATION_CONTEXT.md) - Architectural blueprint, crash-safe error model, and design logs.
 - [`OPERATIONS_GUIDE.md`](./OPERATIONS_GUIDE.md) - Complete system administrator and operations manual.
 
 ---
 
-## 👤 Author & Maintainer
+## Author & Maintainer
 - **Author:** Devanshu Sharma ([@SharmaDevanshu089](https://github.com/SharmaDevanshu089))
 - **Email:** `sharma.devanshu089@gmail.com`
 - **License:** MIT License
