@@ -1,0 +1,509 @@
+/* App Installer - Linux Desktop Design System (Dark & Light Mode) */
+
+:root {
+  --anim-duration: 0.12s;
+  --anim-ease: ease;
+  --font-mono: "JetBrains Mono", "Fira Code", "DejaVu Sans Mono", "Ubuntu Mono", monospace;
+  --radius-none: 0px;
+}
+
+/* Reduced Motion Mode */
+body[data-animation="reduced"] * {
+  animation-duration: 0.001s !important;
+  transition-duration: 0.001s !important;
+}
+
+/* =========================================================
+   DARK MODE PALETTES (Default for Linux Power Users)
+   ========================================================= */
+
+/* 1. GNOME Adwaita Dark */
+body[data-theme="gtk"][data-mode="dark"],
+body[data-theme="gtk"]:not([data-mode="light"]) {
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #252525;
+  --bg-tertiary: #2d2d2d;
+  --bg-card: #282828;
+  --bg-card-hover: #323232;
+  --header-bg: #181818;
+  --header-border: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #c0c0c0;
+  --text-muted: #888888;
+  --accent: #3584e4;
+  --accent-hover: #1c71d8;
+  --accent-text: #ffffff;
+  --accent-light: rgba(53, 132, 228, 0.2);
+  --border-color: #383838;
+  --border-subtle: #2c2c2c;
+  --input-bg: #181818;
+  --input-text: #ffffff;
+  --select-bg: #222222;
+  --select-text: #ffffff;
+  --select-option-bg: #222222;
+  --hero-btn-bg: #3584e4;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #1c71d8;
+}
+
+/* 2. KDE Breeze Dark */
+body[data-theme="kde"][data-mode="dark"],
+body[data-theme="kde"]:not([data-mode="light"]) {
+  --bg-primary: #232629;
+  --bg-secondary: #2a2e32;
+  --bg-tertiary: #31363b;
+  --bg-card: #2a2e32;
+  --bg-card-hover: #31363b;
+  --header-bg: #1d2023;
+  --header-border: #383c40;
+  --text-primary: #eff0f1;
+  --text-secondary: #bdc3c7;
+  --text-muted: #7f8c8d;
+  --accent: #3daee9;
+  --accent-hover: #2980b9;
+  --accent-text: #ffffff;
+  --accent-light: rgba(61, 174, 233, 0.2);
+  --border-color: #383c40;
+  --border-subtle: #2d3034;
+  --input-bg: #1d2023;
+  --input-text: #eff0f1;
+  --select-bg: #232629;
+  --select-text: #eff0f1;
+  --select-option-bg: #232629;
+  --hero-btn-bg: #3daee9;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #2980b9;
+}
+
+/* 3. macOS Aqua Dark */
+body[data-theme="macos"][data-mode="dark"],
+body[data-theme="macos"]:not([data-mode="light"]) {
+  --bg-primary: #1c1c1e;
+  --bg-secondary: #242426;
+  --bg-tertiary: #2c2c2e;
+  --bg-card: #242426;
+  --bg-card-hover: #2c2c2e;
+  --header-bg: #141416;
+  --header-border: #323236;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --text-muted: #6e6e73;
+  --accent: #0a84ff;
+  --accent-hover: #0071e3;
+  --accent-text: #ffffff;
+  --accent-light: rgba(10, 132, 255, 0.2);
+  --border-color: #38383a;
+  --border-subtle: #2c2c2e;
+  --input-bg: #141416;
+  --input-text: #f5f5f7;
+  --select-bg: #1c1c1e;
+  --select-text: #f5f5f7;
+  --select-option-bg: #1c1c1e;
+  --hero-btn-bg: #0a84ff;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #0071e3;
+}
+
+/* 4. System76 COSMIC Dark */
+body[data-theme="cosmic"][data-mode="dark"],
+body[data-theme="cosmic"]:not([data-mode="light"]) {
+  --bg-primary: #16171f;
+  --bg-secondary: #1e1f2b;
+  --bg-tertiary: #272838;
+  --bg-card: #202231;
+  --bg-card-hover: #282a3d;
+  --header-bg: #12131a;
+  --header-border: #2e3042;
+  --text-primary: #f5f6f8;
+  --text-secondary: #b6b9c9;
+  --text-muted: #797c91;
+  --accent: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-text: #16171f;
+  --accent-light: rgba(245, 158, 11, 0.2);
+  --border-color: #32354a;
+  --border-subtle: #242636;
+  --input-bg: #14151c;
+  --input-text: #f5f6f8;
+  --select-bg: #1e1f2b;
+  --select-text: #f5f6f8;
+  --select-option-bg: #1e1f2b;
+  --hero-btn-bg: #f59e0b;
+  --hero-btn-text: #16171f;
+  --hero-btn-hover: #d97706;
+}
+
+/* 5. Nord Dark */
+body[data-theme="nord"][data-mode="dark"],
+body[data-theme="nord"]:not([data-mode="light"]) {
+  --bg-primary: #242933;
+  --bg-secondary: #2e3440;
+  --bg-tertiary: #3b4252;
+  --bg-card: #2e3440;
+  --bg-card-hover: #3b4252;
+  --header-bg: #1e222a;
+  --header-border: #3b4252;
+  --text-primary: #eceff4;
+  --text-secondary: #d8dee9;
+  --text-muted: #798294;
+  --accent: #88c0d0;
+  --accent-hover: #81a1c1;
+  --accent-text: #242933;
+  --accent-light: rgba(136, 192, 208, 0.2);
+  --border-color: #434c5e;
+  --border-subtle: #353c4a;
+  --input-bg: #1f232a;
+  --input-text: #eceff4;
+  --select-bg: #2e3440;
+  --select-text: #eceff4;
+  --select-option-bg: #2e3440;
+  --hero-btn-bg: #88c0d0;
+  --hero-btn-text: #242933;
+  --hero-btn-hover: #81a1c1;
+}
+
+/* =========================================================
+   LIGHT MODE PALETTES
+   ========================================================= */
+
+/* 1. GNOME Adwaita Light */
+body[data-theme="gtk"][data-mode="light"] {
+  --bg-primary: #f6f6f6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #eaeaea;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f0f0;
+  --header-bg: #ebebeb;
+  --header-border: #d0d0d0;
+  --text-primary: #242424;
+  --text-secondary: #4a4a4a;
+  --text-muted: #757575;
+  --accent: #1c71d8;
+  --accent-hover: #165ab0;
+  --accent-text: #ffffff;
+  --accent-light: rgba(28, 113, 216, 0.12);
+  --border-color: #dcdcdc;
+  --border-subtle: #e8e8e8;
+  --input-bg: #ffffff;
+  --input-text: #242424;
+  --select-bg: #ffffff;
+  --select-text: #242424;
+  --select-option-bg: #ffffff;
+  --hero-btn-bg: #1c71d8;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #165ab0;
+}
+
+/* 2. KDE Breeze Light */
+body[data-theme="kde"][data-mode="light"] {
+  --bg-primary: #eff0f1;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e3e5e7;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f5f6f7;
+  --header-bg: #e3e5e7;
+  --header-border: #c8cbcf;
+  --text-primary: #232629;
+  --text-secondary: #4d5156;
+  --text-muted: #7f8c8d;
+  --accent: #1d99f3;
+  --accent-hover: #147ac2;
+  --accent-text: #ffffff;
+  --accent-light: rgba(29, 153, 243, 0.12);
+  --border-color: #c8cbcf;
+  --border-subtle: #d8dadc;
+  --input-bg: #ffffff;
+  --input-text: #232629;
+  --select-bg: #ffffff;
+  --select-text: #232629;
+  --select-option-bg: #ffffff;
+  --hero-btn-bg: #1d99f3;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #147ac2;
+}
+
+/* 3. macOS Aqua Light */
+body[data-theme="macos"][data-mode="light"] {
+  --bg-primary: #f5f5f7;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e8e8ed;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f0f2;
+  --header-bg: #e8e8ed;
+  --header-border: #d2d2d7;
+  --text-primary: #1d1d1f;
+  --text-secondary: #515154;
+  --text-muted: #86868b;
+  --accent: #0071e3;
+  --accent-hover: #005bb5;
+  --accent-text: #ffffff;
+  --accent-light: rgba(0, 113, 227, 0.12);
+  --border-color: #d2d2d7;
+  --border-subtle: #e5e5ea;
+  --input-bg: #ffffff;
+  --input-text: #1d1d1f;
+  --select-bg: #ffffff;
+  --select-text: #1d1d1f;
+  --select-option-bg: #ffffff;
+  --hero-btn-bg: #0071e3;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #005bb5;
+}
+
+/* 4. System76 COSMIC Light */
+body[data-theme="cosmic"][data-mode="light"] {
+  --bg-primary: #f4f5f8;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e5e7ed;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f1f5;
+  --header-bg: #e5e7ed;
+  --header-border: #d0d3de;
+  --text-primary: #1c1d24;
+  --text-secondary: #484b59;
+  --text-muted: #727585;
+  --accent: #d97706;
+  --accent-hover: #b45309;
+  --accent-text: #ffffff;
+  --accent-light: rgba(217, 119, 6, 0.12);
+  --border-color: #d0d3de;
+  --border-subtle: #e0e3ec;
+  --input-bg: #ffffff;
+  --input-text: #1c1d24;
+  --select-bg: #ffffff;
+  --select-text: #1c1d24;
+  --select-option-bg: #ffffff;
+  --hero-btn-bg: #d97706;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #b45309;
+}
+
+/* 5. Nord Light */
+body[data-theme="nord"][data-mode="light"] {
+  --bg-primary: #eceff4;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e5e9f0;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f0f3f8;
+  --header-bg: #e5e9f0;
+  --header-border: #d8dee9;
+  --text-primary: #2e3440;
+  --text-secondary: #434c5e;
+  --text-muted: #798294;
+  --accent: #5e81ac;
+  --accent-hover: #4c6a91;
+  --accent-text: #ffffff;
+  --accent-light: rgba(94, 129, 172, 0.12);
+  --border-color: #d8dee9;
+  --border-subtle: #e5e9f0;
+  --input-bg: #ffffff;
+  --input-text: #2e3440;
+  --select-bg: #ffffff;
+  --select-text: #2e3440;
+  --select-option-bg: #ffffff;
+  --hero-btn-bg: #5e81ac;
+  --hero-btn-text: #ffffff;
+  --hero-btn-hover: #4c6a91;
+}
+
+/* =========================================================
+   GLOBAL NATIVE DESKTOP STYLES
+   - NO AI ROUNDED PILLS, NO EXCESSIVE VERTICAL PADDINGS
+   - CLEAN BORDERS, SQUARE CORNERS (NATIVE LINUX HIG)
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Cantarell", "Ubuntu", "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  transition: background-color var(--anim-duration) ease, color var(--anim-duration) ease;
+}
+
+/* Tauri Draggable Region */
+[data-tauri-drag-region] {
+  -webkit-app-region: drag;
+  app-region: drag;
+}
+
+[data-tauri-no-drag],
+button,
+input,
+select,
+textarea,
+a,
+.no-drag {
+  -webkit-app-region: no-drag;
+  app-region: no-drag;
+}
+
+/* =========================================================
+   BUTTON STYLES (FLAT, LOW PADDING, NO RADIUS)
+   - "use simple buttons with no vertical paddings without buttons and border radius"
+   ========================================================= */
+
+button {
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 0px !important; /* Strictly no border radius */
+  padding: 1px 8px; /* Minimal/no vertical padding */
+  line-height: 22px;
+  height: 24px;
+  transition: background-color 0.1s ease, border-color 0.1s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+}
+
+button:active:not(:disabled) {
+  background: var(--bg-tertiary);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   THE HERO INSTALL BUTTON
+   - "make the install hero button main focus, so it should be everywhere"
+   ========================================================= */
+
+.btn-hero-install {
+  background-color: var(--hero-btn-bg) !important;
+  color: var(--hero-btn-text) !important;
+  border: 1px solid var(--hero-btn-hover) !important;
+  font-weight: 700 !important;
+  font-size: 12.5px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0px 14px !important;
+  height: 26px !important;
+  line-height: 24px !important;
+  border-radius: 0px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.btn-hero-install:hover:not(:disabled) {
+  background-color: var(--hero-btn-hover) !important;
+  border-color: var(--text-primary) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================================
+   INPUTS & DROPDOWNS (HIGH VISIBILITY IN DARK MODE)
+   - "the dropdowns dont look visible in dark mode"
+   ========================================================= */
+
+input, textarea {
+  font-family: inherit;
+  font-size: 12px;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  border-radius: 0px !important;
+  padding: 2px 6px;
+  height: 24px;
+  outline: none;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Highly visible select/dropdowns */
+select {
+  font-family: inherit;
+  font-size: 12px;
+  background-color: var(--select-bg) !important;
+  color: var(--select-text) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 0px !important;
+  padding: 1px 8px !important;
+  height: 24px !important;
+  outline: none !important;
+  cursor: pointer;
+  appearance: menulist !important;
+  -webkit-appearance: menulist !important;
+}
+
+select:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 1px var(--accent) !important;
+}
+
+select option {
+  background-color: var(--select-option-bg) !important;
+  color: var(--select-text) !important;
+  padding: 4px 8px;
+}
+
+/* Links & Small Tags */
+.mini-link {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 0px !important;
+  padding: 1px 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mini-link:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

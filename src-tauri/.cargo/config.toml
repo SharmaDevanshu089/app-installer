@@ -1,0 +1,6 @@
+[env]
+PKG_CONFIG_PATH = { value = "/tmp/local-dev/usr/lib/x86_64-linux-gnu/pkgconfig:/tmp/local-dev/usr/share/pkgconfig", force = true }
+LIBRARY_PATH = { value = "/tmp/local-dev/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu", force = true }
+
+[build]
+rustflags = ["-L", "/tmp/local-dev/usr/lib/x86_64-linux-gnu"]
