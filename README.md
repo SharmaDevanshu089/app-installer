@@ -85,8 +85,19 @@ cargo test
 
 # Release Executable
 cargo build --release
+### Release Artifacts & Bundles
+- **Portable Binary:** `src-tauri/target/release/app-installer` (6.4 MiB)
+- **Debian/Ubuntu Package (.deb):** `src-tauri/target/release/bundle/deb/app-installer_0.1.0_amd64.deb` (2.8 MiB)
+- **Portable AppImage (.AppImage):** `src-tauri/target/release/bundle/appimage/app-installer_0.1.0_amd64.AppImage` (78.5 MiB)
+
+To build package bundles directly:
+```bash
+# Build Debian .deb bundle
+npx tauri build --bundles deb
+
+# Build portable .AppImage bundle
+npx tauri build --bundles appimage
 ```
-Release binary: `src-tauri/target/release/app-installer`.
 
 ---
 
